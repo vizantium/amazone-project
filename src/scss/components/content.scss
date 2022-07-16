@@ -1,0 +1,139 @@
+
+.container {
+  background-color: #EAEDED;
+
+}
+.content {
+  width: 1300px;
+  background-color: #EAEDED;
+  padding-left: 20px;
+  margin: 0 auto;
+  .blocks {
+    padding-top: 50px;
+    width: 100%;
+    .block-1 {
+      display: flex;
+      justify-content: space-around;
+      padding-right: 2%;
+    }
+    .block-2 {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      margin-right: 2%;
+      padding-bottom: 50px;
+    }
+
+  }
+
+  .smallBlock {
+    width: 280px;
+    text-align: center;
+    padding: 15px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    img {
+      width: 88%;
+      height: 65%;
+      object-fit:cover;
+    }
+    .nameBlock {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .linkBlock {
+      font-size: 14px;
+      color: #007185;
+      margin-top: 15px;
+      text-decoration: none;
+    }
+    .linkBlock:hover {
+      color: #C7511F;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .blocks__bottom {
+    display: flex;
+  }
+
+  .advertising {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    img{
+      cursor: pointer;
+    }
+  }
+
+
+}
+.content__bottom {
+  height: 180px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  .bottom__info {
+    margin-top: 30px;
+    font-size: 13px;
+  }
+
+    .bottom__button__sign {
+      font-weight: 700;
+      font-size: 12px;
+      padding: 10px 100px;
+      cursor: pointer;
+      background-color: #febd69;
+      border-radius: 5px;
+      box-shadow: black;
+      border: 1px solid;
+      border-color: #c89411 #b0820f #99710d;
+      text-decoration: none;
+      color: black;
+    }
+    .bottom__start__hidden {
+      color: white;
+    }
+  .bottom__button__sign:hover {
+    text-decoration: underline;
+  }
+  .bottom_start {
+      color: blue;
+    text-decoration: none;
+  }
+
+  .bottom_start:hover {
+    color: #febd69;
+    cursor: pointer;
+    height: 10px;
+    text-decoration: underline;
+  }
+
+  .bottom__line__top {
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .bottom__line {
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+  }
+}
+
+.scroll__up {
+  background-color: #37475A;
+  text-align: center;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 17px 0px;
+  cursor: pointer;
+}

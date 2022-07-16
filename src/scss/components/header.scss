@@ -1,0 +1,371 @@
+
+.header {
+  width: 100%;
+  height: 100px;
+  min-width: 1000px;
+
+  .topHeader {
+    height: 60%;
+    background-color: black;
+    display: flex;
+
+    .headerLogo {
+      height: 60%;
+      padding: 8px;
+      padding-bottom: 1px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      margin-top: 7px;
+      margin-left: 7px;
+      padding-top: 12px;
+    }
+
+    .headerLogo:hover {
+      border: 1px solid white;
+    }
+
+    .headerDelivery {
+      padding: 7px 0px;
+      padding-bottom: 2px;
+      padding-right: 5px;
+      cursor: pointer;
+      display: flex;
+      color: white;
+      height: 60%;
+      margin-top: 7px;
+      margin-left: 3px;
+      border: 1px solid transparent;
+
+      .locationIcon {
+        height: 50%;
+        padding-top: 8px;
+      }
+
+      .textDelivery {
+        .textOne {
+          display: block;
+          font-size: 12px;
+          color: #ccc;
+        }
+
+        .textTwo {
+          display: block;
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .headerDelivery:hover {
+      border: 1px solid white;
+    }
+
+    .language {
+      margin: 8px;
+      border: 1px solid transparent;
+
+      .flag {
+        height: 15px;
+        padding-top: 17px;
+        padding-left: 10px;
+      }
+
+      .down {
+        height: 15px;
+        padding-left: 4px;
+        padding-right: 10px;
+      }
+
+    }
+
+    .SignIn {
+
+      margin-top: 8px;
+      margin-bottom: 8px;
+      border: 1px solid transparent;
+      padding: 5px;
+
+      .SignInBlock {
+        cursor: pointer;
+        color: #f3f3f3;
+      }
+
+      .hover {
+        display: none;
+      }
+
+      .helloSign {
+        font-size: 12px;
+      }
+
+      .AccountSign {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
+    .SignIn:hover {
+      border: 1px solid white;
+
+      .hover {
+        display: block;
+      }
+    }
+
+    .signInHover {
+      position: fixed;
+      top: 53px;
+      right: 100px;
+      width: 500px;
+      height: 400px;
+      background-color: rgb(250, 250, 250);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+      .signInBlock {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .aSign {
+          margin-top: 20px;
+          font-size: 12px;
+          padding: 10px 10px;
+          width: 100px;
+          cursor: pointer;
+          background-color: #febd69;
+          color: black;
+          text-decoration: none;
+          border-radius: 5px;
+          box-shadow: black;
+          border: 1px solid;
+          border-color: #c89411 #b0820f #99710d;
+        }
+        .aSign:hover {
+          text-decoration: underline;
+        }
+
+        span {
+          font-size: 11px;
+          margin-top: 10px;
+
+          .aStart {
+            color: blue;
+          }
+
+          .aStart:hover {
+            color: #febd69;
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .signLineOne {
+        border-bottom: 1px solid gray;
+        margin: 10px 30px;
+      }
+    }
+
+    .language:hover {
+      border: 1px solid white;
+    }
+
+    .returnOrders {
+      color: #f3f3f3;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      margin-left: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 4px;
+      font-size: 14px;
+
+      span {
+        display: block;
+      }
+
+      svg {
+        color: #f3f3f3;
+
+        path {
+          color: #f3f3f3;
+        }
+      }
+    }
+
+    .cart {
+      margin: 8px 10px;
+      color: #f08804;
+      display: flex;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 4px;
+
+      img {
+        margin-top: 5px;
+        width: 30px;
+      }
+    }
+
+    .cart:hover {
+      border: 1px solid white;
+    }
+
+    .spanCart {
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    .returnOrders:hover {
+      border: 1px solid white;
+
+    }
+  }
+
+  .bottomHeader {
+    height: 40%;
+    background-color: #232f3e;
+    display: flex;
+
+    div {
+      color: #f3f3f3;
+      padding: 4px;
+      margin-top: 4px;
+      margin-left: 9px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: flex;
+      margin-bottom: 4px;
+    }
+
+    img {
+      width: 22px;
+      padding-top: 1px;
+    }
+
+    span {
+      padding-top: 1px;
+    }
+
+    div:hover {
+      border: 1px solid white;
+    }
+  }
+}
+.signAuth {
+  margin-top: 20px;
+}
+
+.signAuthHover {
+  height: 350px !important;
+}
+.signOut {
+  font-weight: bold !important;
+  font-size: 13px !important;
+}
+.signInfo {
+  display: flex;
+
+  div {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  li {
+    font-size: 13px;
+    font-weight: normal;
+    list-style-type: none;
+    padding-top: 5px;
+  }
+
+  li:hover {
+    color: #febd69;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .firstSignUl {
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .signLineTwo {
+    border-left: 1px solid grey;
+  }
+
+  .secondSignUl {
+    margin-left: 2%;
+    width: 48%;
+  }
+}
+
+.menu {
+  top: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-125%);
+  transition: all 0.2s;
+  z-index: 2;
+}
+.menu__info {
+  width: 25%;
+  height: 100%;
+  background: #f3f3f3;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  span {
+    font-weight: 700;
+    padding: 13px 30px;
+  }
+  a {
+    padding: 13px 30px;
+  }
+  a:hover {
+    background-color: #eaeded;
+    cursor: pointer;
+  }
+  .menu__header {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f3f3f3;
+   background: black;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .menu__shop {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu__line {
+    display: flex;
+    margin: 5px 0px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid black;
+  }
+  .menu__help {
+    display: flex;
+    flex-direction: column;
+    .menu__link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+.active{
+  transform: translateX(0%);
+}
+.brightness {
+  position: absolute;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
