@@ -20,6 +20,7 @@ export const Header: React.FC = () => {
     const dispatch = useAppDispatch()
     const {isAuth} = useSelector((state:StateType) => state.LoginSlice)
     const {name} = useSelector((state:StateType) => state.LoginSlice?.regData[0])
+    const {totalCount} = useSelector((state:StateType) => state.cartSlice)
     const auth = async () => {
         const email = localStorage.getItem('email')
         if (email) {
@@ -73,10 +74,10 @@ export const Header: React.FC = () => {
                     <span>Return</span>
                     <span>& Orders</span>
                 </div>
-                <div className={'cart'}>
-                    <a><img src={cart}/></a>
-                    <span className={'spanCart'}>0</span>
-                </div>
+                <Link to={'cart'} className={'cart'}>
+                    <div><img src={cart}/></div>
+                    <span className={'spanCart'}>{totalCount}</span>
+                </Link>
             </div>
             <div className={'bottomHeader'}>
                 <div onClick={() => setVisibleMenu(!isVisibleMenu)} >

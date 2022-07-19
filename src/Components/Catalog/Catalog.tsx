@@ -24,6 +24,7 @@ export const Catalog: React.FC = () => {
     const sortRef = useRef<HTMLDivElement>(null)
     const [minPrice, setMinPrice] = useState('0')
     const [maxPrice, setMaxPrice] = useState('999999999')
+    const [rating, setRating] = useState('0')
 
 
     async function axiosGet() {
@@ -96,8 +97,8 @@ export const Catalog: React.FC = () => {
                 </div>
             </div>
             <div className={'catalog__content'}>
-                <Sort setMinPrice={setMinPrice} setMaxPrice={setMaxPrice}/>
-                <CatalogItems minPrice={minPrice} maxPrice={maxPrice}/>
+                <Sort setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} setRating={setRating}/>
+                <CatalogItems minPrice={minPrice} maxPrice={maxPrice} rating={rating}/>
             </div>
         </div>
     )

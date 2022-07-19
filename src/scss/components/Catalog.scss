@@ -201,49 +201,7 @@
               display: flex;
               align-items: center;
               margin-top: 5px;
-              .item__rating__2 {
-                background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
-                -webkit-background-size: 512px 512px;
-                background-size: 512px 512px;
-                background-repeat: no-repeat;
-                background-position: -2px -102px;
-                height: 18px;
-                width: 80px;
-                margin-top: 2px;
-              }
 
-              .item__rating__3 {
-                background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
-                -webkit-background-size: 512px 512px;
-                background-size: 512px 512px;
-                background-repeat: no-repeat;
-                background-position: -2px -62px;
-                height: 18px;
-                width: 80px;
-                margin-top: 2px;
-              }
-
-              .item__rating__4 {
-                background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
-                -webkit-background-size: 512px 512px;
-                background-size: 512px 512px;
-                background-repeat: no-repeat;
-                background-position: -2px -22px;
-                height: 18px;
-                width: 80px;
-                margin-top: 2px;
-              }
-
-              .item__rating__5 {
-                background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
-                -webkit-background-size: 512px 512px;
-                background-size: 512px 512px;
-                background-repeat: no-repeat;
-                background-position: -2px -2px;
-                height: 18px;
-                width: 80px;
-                margin-top: 2px;
-              }
 
               .item__rating__ic {
                 background-image: url(https://m.media-amazon.com/images/S/sash/McBZv0ZvnbehkIx.png);
@@ -368,4 +326,48 @@
       cursor: pointer;
     }
   }
+}
+
+.item__rating__2 {
+  background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
+  -webkit-background-size: 512px 512px;
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  background-position: -2px -102px;
+  height: 18px;
+  width: 80px;
+  margin-top: 2px;
+}
+
+.item__rating__3 {
+  background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
+  -webkit-background-size: 512px 512px;
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  background-position: -2px -62px;
+  height: 18px;
+  width: 80px;
+  margin-top: 2px;
+}
+
+.item__rating__4 {
+  background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
+  -webkit-background-size: 512px 512px;
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  background-position: -2px -22px;
+  height: 18px;
+  width: 80px;
+  margin-top: 2px;
+}
+
+.item__rating__5 {
+  background-image: url(https://m.media-amazon.com/images/S/sash/ouR9NRElwmzAIev.png);
+  -webkit-background-size: 512px 512px;
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  background-position: -2px -2px;
+  height: 18px;
+  width: 80px;
+  margin-top: 2px;
 }

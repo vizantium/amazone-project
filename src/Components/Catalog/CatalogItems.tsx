@@ -5,15 +5,14 @@ import {StateType} from "../../redux/redux-store";
 
 type catalogItemsProps = {
     minPrice: string,
-    maxPrice: string
+    maxPrice: string,
+    rating: string
 }
 
-export const CatalogItems:React.FC<catalogItemsProps> = ({minPrice, maxPrice}) => {
+export const CatalogItems:React.FC<catalogItemsProps> = ({minPrice, maxPrice, rating}) => {
     const {items} = useSelector((state:StateType) => state.catalogSlice)
     const {checkBoxValue} = useSelector((state:StateType) => state.filterSlice)
 
-    console.log(minPrice)
-    console.log(maxPrice)
     let CheckItems = items
 
     if(checkBoxValue.length > 0) {
@@ -24,8 +23,11 @@ export const CatalogItems:React.FC<catalogItemsProps> = ({minPrice, maxPrice}) =
 
     CheckItemsAfterPrice = CheckItems.filter(item => Number(minPrice + '00') < Number(item.price) && Number(item.price) < Number(maxPrice + '00') )
 
+    let SortItemsByRating = CheckItemsAfterPrice
 
-    const catalog = CheckItemsAfterPrice.map ((obj: any) => <Item key={obj.info.id} {...obj}/>)
+    SortItemsByRating = CheckItemsAfterPrice.filter(item => Number(item.rating) > Number(rating))
+
+    const catalog = SortItemsByRating.map ((obj: any) => <Item key={obj.info.id} {...obj}/>)
     return (
         <div className={'catalog__items'}>
             <div className={'catalog__items__header'}>

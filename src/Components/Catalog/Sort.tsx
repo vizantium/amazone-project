@@ -13,9 +13,10 @@ type formType = {
 type sortProps = {
     setMinPrice: (arg: string) => void
     setMaxPrice: (arg: string) => void
+    setRating: (arg: string) => void
 }
 
-export const Sort: React.FC<sortProps> = ({setMinPrice, setMaxPrice}) => {
+export const Sort: React.FC<sortProps> = ({setMinPrice, setMaxPrice, setRating}) => {
     const {category} = useSelector((state: StateType) => state.filterSlice)
     const {items} = useSelector((state: StateType) => state.catalogSlice)
     const categoryUp = category.charAt(0).toUpperCase() + category.slice(1)
@@ -23,17 +24,14 @@ export const Sort: React.FC<sortProps> = ({setMinPrice, setMaxPrice}) => {
         mode: "onSubmit"
     })
     const dispatch = useAppDispatch()
-    console.log(items)
     let brands = [] as unknown as Array<string>
     items.forEach(obj => {
         if (obj.info.brands) {
             brands = obj.info.brands
         }
     })
-    console.log(brands)
     const changeCheckbox = (event: ChangeEvent) => {
         const att = event.target.getAttribute('value')
-        console.log(att)
         dispatch(setCheckBoxValue(att))
     }
 
@@ -67,27 +65,27 @@ export const Sort: React.FC<sortProps> = ({setMinPrice, setMaxPrice}) => {
             <div className={'catalog__sort__rating'}>
                 <div className={'catalog__sort__rating__text'}>Avg. Customer Review</div>
                 <ul>
-                    <Link to={'/'} className={'catalog__home'}>
+                    <div onClick={() => setRating('0')} className={'catalog__home'}>
                         <div className={'category__home__i'}></div>
-                        Clear</Link>
-                    <li><Link to={'/'} className={'catalog__sort__rating__row'}>
+                        Clear</div>
+                    <li><div onClick={() => setRating('4')} className={'catalog__sort__rating__row'}>
                         <div className={'rating__item__1'}/>
-                        <span className={'rating__text'}>& Up</span></Link></li>
-                    <li><Link to={'/'} className={'catalog__sort__rating__row'}>
+                        <span className={'rating__text'}>& Up</span></div></li>
+                    <li><div onClick={() => setRating('3')} className={'catalog__sort__rating__row'}>
                         <div className={'rating__item__2'}/>
-                        <span className={'rating__text'}>& Up</span></Link></li>
-                    <li><Link to={'/'} className={'catalog__sort__rating__row'}>
+                        <span className={'rating__text'}>& Up</span></div></li>
+                    <li><div onClick={() => setRating('2')} className={'catalog__sort__rating__row'}>
                         <div className={'rating__item__3'}/>
-                        <span className={'rating__text'}>& Up</span></Link></li>
-                    <li><Link to={'/'} className={'catalog__sort__rating__row'}>
+                        <span className={'rating__text'}>& Up</span></div></li>
+                    <li><div onClick={() => setRating('1')} className={'catalog__sort__rating__row'}>
                         <div className={'rating__item__4'}/>
-                        <span className={'rating__text'}>& Up</span></Link></li>
+                        <span className={'rating__text'}>& Up</span></div></li>
                 </ul>
             </div>
             <div className={'catalog__sort__brand'}>
                 <div className={'catalog__brand'}>Brand</div>
                 <div>
-                    {brands.map((obj) => <div><input type='checkbox' value={obj}
+                    {brands.map((obj, index) => <div key={index}><input type='checkbox' value={obj}
                                                      onChange={changeCheckbox}/><span>{obj.toUpperCase()}</span></div>)}
                 </div>
             </div>

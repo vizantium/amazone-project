@@ -65,17 +65,13 @@ const LoginSlice = createSlice({
     extraReducers: builder => {
         builder.addCase(getRegData.fulfilled, (state, action) => {
             let result = (action.payload.filter((obj:regDataType) => {
-                console.log(obj.email, state.email)
                 return obj.email === state.email
             }))
-            console.log(result)
             if (result.length > 0) {
-                console.log(result)
                 state.regData = result
                 state.isLogin = true
             } else {
                 state.isLogin = false
-                console.log('false')
                 state.regData = nullRegData
             }
         });

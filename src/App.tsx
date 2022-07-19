@@ -7,6 +7,8 @@ import {Login} from "./Components/Registration & Login/Login";
 import {MainLayout} from "./Components/Content/MainPage";
 import {LoginPassword} from "./Components/Registration & Login/LoginPassword";
 import {Catalog} from "./Components/Catalog/Catalog";
+import {FullItem} from "./Components/FullItem/FullItem";
+import {Cart} from "./Components/Cart/Cart";
 
 
 function App() {
@@ -15,7 +17,21 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route path={''} element={<Content/>}/>
-                    <Route path={'catalog'} element={<Catalog/>}/>
+                    <Route path={'catalog'} element={
+                        <React.Suspense fallback={<div>Download...</div>}>
+                            <Catalog/>
+                        </React.Suspense>
+                    }/>
+                    <Route path={'fullItem'} element={
+                        <React.Suspense fallback={<div>Download...</div>}>
+                            <FullItem/>
+                        </React.Suspense>
+                    }/>
+                    <Route path={'cart'} element={
+                        <React.Suspense fallback={<div>Download...</div>}>
+                            <Cart/>
+                        </React.Suspense>
+                    }/>
                 </Route>
                 <Route path={'registration'} element={<Registration/>}/>
                 <Route path={'login'} element={<Login/>}/>
