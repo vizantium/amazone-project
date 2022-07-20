@@ -17,7 +17,6 @@ export const Login: React.FC = () => {
     const dispatch = useAppDispatch()
     const {isLogin} = useSelector((state: StateType) => state.LoginSlice)
 
-    debugger;
     useEffect(() => {
         console.log('rerender')
         console.log(isLogin)

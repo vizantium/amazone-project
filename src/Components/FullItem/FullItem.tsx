@@ -7,6 +7,7 @@ import {StateType, useAppDispatch} from "../../redux/redux-store";
 import {addItem} from "../../redux/cart-slice";
 import {useSelector} from "react-redux";
 import {PriceDiv} from "../../utils/priceDiv";
+import {useForm} from "react-hook-form";
 
 
 type infoType = {
@@ -60,7 +61,11 @@ export const FullItem: React.FC = () => {
 
     }, [])
 
-
+    useEffect(() => {
+        if (!isAuth) {
+            navigate('/login')
+        }
+    }, [])
 
     const getRandomIntInclusive = (min: number, max: number) => {
         min = Math.ceil(min);
