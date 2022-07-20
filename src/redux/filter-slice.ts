@@ -41,10 +41,13 @@ const filterSlice = createSlice({
             } else {
                 state.checkBoxValue.push(action.payload)
             }
+        },
+        setSearchValue(state, action) {
+            state.searchValue = action.payload
         }
     }
 })
 
-export const {setCategory, setFilters, setSort, setOrder, setCheckBoxValue} = filterSlice.actions
+export const {setCategory, setFilters, setSort, setOrder, setCheckBoxValue, setSearchValue} = filterSlice.actions
 
 export default filterSlice.reducer

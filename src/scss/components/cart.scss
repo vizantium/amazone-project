@@ -3,10 +3,50 @@
   background-color: #EAEDED !important;
 
   .cart__block {
+    display: flex;
     width: 97%;
     margin: 0 auto;
     padding-top: 30px;
     padding-bottom: 30px;
+    .cart__subtotal {
+      width: 22%;
+      margin-left: 20px;
+      background-color: white;
+      height: 80px;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      font-size: 18px;
+      line-height: 24px;
+      .subtotal__button {
+        margin-top: 5px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        background: #FFD814;
+        border-color: #FCD200;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+        width: 90%;
+        height: 33px;
+        span {
+          margin: 0 auto;
+          font-size: 13px;
+          line-height: 29px;
+        }
+      }
+      .subtotal__button:hover {
+        background: #F7CA00;
+        border-color: #F2C200;
+        box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+        cursor: pointer ;
+      }
+      .subtotal__button:active {
+        background: #FFD814;
+        border-color: #FCD200;
+        box-shadow: none;
+      }
+    }
     .cart__items {
       background-color: white;
       width: 74%;
@@ -49,13 +89,13 @@
       justify-content: right;
       margin-right: 20px;
       padding-bottom: 50px;
-      .totalPrice {
-        font-weight: 700;
-        padding-left: 5px;
-      }
+
     }
   }
-
+  .totalPrice {
+    font-weight: 700;
+    padding-left: 5px;
+  }
   .empty {
     width: 75%;
     padding-top: 30px;
@@ -164,6 +204,34 @@
           padding-top: 2px;
           font-size: 12px;
           font-weight: 600;
+        }
+        .cartItem__7 {
+          .minus {
+            font-size: 22px;
+            cursor: pointer;
+          }
+          .plus {
+            font-size: 22px;
+            cursor: pointer;
+
+          }
+          .count {
+            font-size: 20px;
+          }
+          .delete {
+            color: #0066C0;
+            cursor: pointer;
+            position: relative;
+            bottom: 1px;
+          }
+          .delete:hover {
+            text-decoration: underline;
+          }
+          .vert__line{
+            font-size: 20px;
+            position: relative;
+            bottom: 1px;
+          }
         }
       }
     }

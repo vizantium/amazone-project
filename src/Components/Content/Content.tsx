@@ -1,29 +1,24 @@
-import React, {useCallback, useEffect, useRef} from "react";
+import React, {useCallback} from "react";
 import {Carousel} from "../../utils/Carousel";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {signOut} from "../../redux/Login-Slice";
 import {StateType, useAppDispatch} from "../../redux/redux-store";
 import {useSelector} from "react-redux";
-import {getCatalogByCategory} from "../../redux/catalog-Slice";
-import {setCategory, setFilters} from "../../redux/filter-slice";
-import qs from "qs";
+import {setCategory} from "../../redux/filter-slice";
 
 export const Content: React.FC = () => {
-    const navigate = useNavigate()
     const scrollUp = () => {
         window.scrollTo(0, -200)
     }
-    const {category, searchValue} = useSelector((state:StateType) => state.filterSlice)
     const dispatch = useAppDispatch()
     const {isAuth} = useSelector((state:StateType) => state.LoginSlice)
-    const isSearch = useRef(false)
-    const isMounted = useRef(false)
+
 
 
     const signOutClick = () => {
         dispatch(signOut())
     }
-    const onClickHandler = useCallback((category: any) => {
+    const onClickHandler = useCallback((category: string) => {
         dispatch(setCategory(category))
     },[])
 

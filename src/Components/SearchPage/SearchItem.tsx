@@ -4,28 +4,6 @@ import {useSelector} from "react-redux";
 import {StateType} from "../../redux/redux-store";
 
 
-// const items =
-// {
-//     "name": "",
-//     "imageUrl": "",
-//     "price": "",
-//     "rating": "",
-//     "ratings": "",
-//     "category": "laptop",
-//     "brand": "",
-//     "info": {
-//         "size": [
-//             "",
-//             ""
-//         ],
-//         "style": [
-//             "",
-//             ""
-//         ],
-//         "id": ""
-//     }
-// },
-
 type itemType = {
     name: string,
     imageUrl: string,
@@ -37,7 +15,7 @@ type itemType = {
     }
 }
 
-export const Item:React.FC<itemType> = ({name, imageUrl, price, ratings, rating, info}) => {
+export const SearchItem:React.FC<itemType> = ({name, imageUrl, price, ratings, rating, info}) => {
 
 
     const bigPrice = price.toString().slice(0, -2)

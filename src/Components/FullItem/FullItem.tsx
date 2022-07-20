@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import qs from "qs";
 import {typeItem} from "../../redux/catalog-Slice";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {StateType, useAppDispatch} from "../../redux/redux-store";
 import {addItem} from "../../redux/cart-slice";
 import {useSelector} from "react-redux";
@@ -21,7 +21,8 @@ export const FullItem: React.FC = () => {
     const dispatch = useAppDispatch()
     const refDiv = useRef<HTMLDivElement>(null)
     const count = cartItem ? cartItem.count : 0
-
+    const {isAuth} = useSelector((state:StateType) => state.LoginSlice)
+    const navigate = useNavigate()
     console.log(count)
 
     const onClickAdd = () => {
@@ -33,28 +34,33 @@ export const FullItem: React.FC = () => {
     }
 
     useEffect(() => {
-        let curId = ''
-        if (window.location.search) {
-            const params = (qs.parse(window.location.search.substring(1)) as unknown) as any
-            curId = params.item
-        }
-        window.scrollTo(0, 0)
-
-        async function getFullItem() {
-            try {
-                let {data} = await axios.get<typeItem[]>(`https://62c84bd50f32635590d618e2.mockapi.io/computers`)
-                data = data.filter(item => item.info.id === curId)
-                if (data) {
-                    setItem(data[0])
-                }
-                console.log(data, curId, item)
-            } catch (error) {
-                alert(error)
+            let curId = ''
+            if (window.location.search) {
+                const params = (qs.parse(window.location.search.substring(1)) as unknown) as any
+                curId = params.item
             }
-        }
+            window.scrollTo(0, 0)
 
-        getFullItem()
+            async function getFullItem() {
+                try {
+                    let {data} = await axios.get<typeItem[]>(`https://62c84bd50f32635590d618e2.mockapi.io/computers`)
+                    data = data.filter(item => item.info.id === curId)
+                    if (data) {
+                        setItem(data[0])
+                    }
+                    console.log(data, curId, item)
+                } catch (error) {
+                    alert(error)
+                }
+            }
+
+            getFullItem()
+
+
+
     }, [])
+
+
 
     const getRandomIntInclusive = (min: number, max: number) => {
         min = Math.ceil(min);

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import location from '../../assets/img/location.png'
 import {Search} from "./Search";
 import down from '../../assets/img/down.png'
@@ -10,10 +10,8 @@ import {useSelector} from "react-redux";
 import {StateType, useAppDispatch} from "../../redux/redux-store";
 import {getRegData, setEmail, setIsAuth, signOut} from "../../redux/Login-Slice";
 import {SignInHoverAuth} from "./SignInHoverAuth";
+import {setCategory} from "../../redux/filter-slice";
 
-type PopupClick = MouseEvent & {
-    path: Node[]
-}
 
 export const Header: React.FC = () => {
     const [isVisibleMenu, setVisibleMenu] = useState(false)
@@ -21,6 +19,17 @@ export const Header: React.FC = () => {
     const {isAuth} = useSelector((state:StateType) => state.LoginSlice)
     const {name} = useSelector((state:StateType) => state.LoginSlice?.regData[0])
     const {totalCount} = useSelector((state:StateType) => state.cartSlice)
+    const isMounted = useRef(false)
+    const {items} = useSelector((state:StateType) => state.cartSlice)
+
+    React.useEffect(() => {
+        if (isMounted.current) {
+            const json = JSON.stringify(items)
+            localStorage.setItem('cart', json)
+        }
+        isMounted.current = true
+    },[items])
+
     const auth = async () => {
         const email = localStorage.getItem('email')
         if (email) {
@@ -38,6 +47,11 @@ export const Header: React.FC = () => {
     const signOutClick = () => {
         dispatch(signOut())
     }
+
+    const onClickHandler = useCallback((category: string) => {
+        dispatch(setCategory(category))
+        setVisibleMenu(false)
+    },[])
 
     return (
         <div className={'header'}>
@@ -103,14 +117,14 @@ export const Header: React.FC = () => {
                         <div className={'menu__header'}>Hello, {isAuth ? ' ' + name : 'Sign in'}</div>
                         <div className={'menu__shop'}>
                             <span>Shop by department</span>
-                            <a>Smartwatches</a>
-                            <a>Kindle E readers</a>
-                            <a>Gaming accessories</a>
+                            <a>Video Game Consoles</a>
                             <a>Computers & Accessories</a>
-                            <a>For your Fitness Needs</a>
-                            <a>Health & Personal Care</a>
-                            <a>Toys</a>
-                            <a>Pet supplies</a>
+                            <a>Headphones</a>
+                            <a>Cell Phones & Accessories</a>
+                            <a>Television & Video</a>
+                            <a>Computer Components</a>
+                            <Link to={'/catalog'} onClick={() => onClickHandler('laptop')}>Computers & Tablets</Link>
+                            <Link to={'/catalog'} onClick={() => onClickHandler('monitor')}>Monitors</Link>
                         </div>
                         <div className={'menu__line'}/>
                         <div className={'menu__help'}>

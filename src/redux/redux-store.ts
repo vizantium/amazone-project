@@ -5,6 +5,7 @@ import LoginSlice from "./Login-Slice";
 import catalogSlice from "./catalog-Slice";
 import filterSlice from "./filter-slice";
 import cartSlice from "./cart-slice";
+import searchSlice from "./search-slice";
 
 
 export const store = configureStore({
@@ -12,7 +13,8 @@ export const store = configureStore({
         LoginSlice: LoginSlice,
         catalogSlice: catalogSlice,
         filterSlice: filterSlice,
-        cartSlice: cartSlice
+        cartSlice: cartSlice,
+        searchSlice: searchSlice
     }
 })
 

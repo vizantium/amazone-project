@@ -1,10 +1,25 @@
 import React from "react";
-import {cartItem} from "../../redux/cart-slice";
+import {addItem, addItemPlus, cartItem, minusItem, removeAll, removeItem} from "../../redux/cart-slice";
+import {useDispatch} from "react-redux";
 
 
 export const CartItem:React.FC<cartItem> = ({item, count, options}) => {
-
+    const dispatch = useDispatch()
     const ItemPrice = Number(item.price) * count
+    const id = item.info.id
+    const price = item.price
+
+    const onClickMinus = () => {
+        dispatch(minusItem({id, price}))
+    }
+    debugger
+    const onClickPlus = () => {
+        dispatch(addItemPlus(id))
+    }
+    const onClickRemove = () => {
+        dispatch(removeItem({id, price, count}))
+    }
+
 
     return (
         <div className={'cartItem'}>
@@ -20,7 +35,9 @@ export const CartItem:React.FC<cartItem> = ({item, count, options}) => {
                     <div className={'cartItem__4'}>Shipped from: M + L</div>
                     <div className={'cartItem__5'}>Gift options not available.Gift options not available. Learn more</div>
                     <div className={'cartItem__6'}>{options}</div>
-                    <div><span> - </span><span>{count}</span><span> + </span><span> | </span><span>Delete</span></div>
+                    <div className={'cartItem__7'}><span onClick={onClickMinus} className={'minus'}> - </span><span className={'count'}>{count}</span>
+                        <span onClick={onClickPlus} className={'plus'}> + </span>
+                        <span className={'vert__line'}> | </span><span onClick={onClickRemove} className={'delete'}>Delete</span></div>
                 </div>
             </div>
             <div className={'fullItem__line'}/>

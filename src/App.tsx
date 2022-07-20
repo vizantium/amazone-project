@@ -9,6 +9,7 @@ import {LoginPassword} from "./Components/Registration & Login/LoginPassword";
 import {Catalog} from "./Components/Catalog/Catalog";
 import {FullItem} from "./Components/FullItem/FullItem";
 import {Cart} from "./Components/Cart/Cart";
+import {SearchPage} from "./Components/SearchPage/SearchPage";
 
 
 function App() {
@@ -32,6 +33,12 @@ function App() {
                             <Cart/>
                         </React.Suspense>
                     }/>
+                    <Route path={'/search'} element={
+                        <React.Suspense fallback={<div>Download...</div>}>
+                            <SearchPage/>
+                        </React.Suspense>
+                    }/>
+
                 </Route>
                 <Route path={'registration'} element={<Registration/>}/>
                 <Route path={'login'} element={<Login/>}/>
