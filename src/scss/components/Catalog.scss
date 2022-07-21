@@ -183,6 +183,7 @@
             display: flex;
             .catalog__image {
               width: 90%;
+              max-height: 250px;
             }
           }
           .catalog__item__info {

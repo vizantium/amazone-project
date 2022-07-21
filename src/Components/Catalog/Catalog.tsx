@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {StateType, useAppDispatch} from "../../redux/redux-store";
 import qs from "qs";
 import {useNavigate} from "react-router-dom";
-import {setCategory, setFilters, setOrder, setSort} from "../../redux/filter-slice";
+import {setFilters, setOrder, setSort} from "../../redux/filter-slice";
 import {getCatalogByCategory} from "../../redux/catalog-Slice";
 
 type PopupClick = MouseEvent & {

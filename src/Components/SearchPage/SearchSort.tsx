@@ -1,8 +1,7 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {StateType, useAppDispatch} from "../../redux/redux-store";
-import {setCheckBoxValue} from "../../redux/filter-slice";
+import {StateType} from "../../redux/redux-store";
 import {useForm} from "react-hook-form";
 
 type formType = {

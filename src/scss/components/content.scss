@@ -4,24 +4,37 @@
 
 }
 .content {
-  max-width: 1300px;
+  max-width: 1500px;
   min-width: 1100px;
   background-color: #EAEDED;
-  padding-left: 20px;
   margin: 0 auto;
+  .content__image {
+    width: 99.2%;
+
+  }
+  .content__image__block {
+    width: auto;
+    max-width: 1500px;
+    min-width: 1100px;
+    position: relative;
+  }
+  .blocks__relative {
+  }
   .blocks {
-    padding-top: 50px;
     width: 100%;
     .block-1 {
+      position: relative;
+      z-index: 2;
+      margin-top: -270px;
+      padding-top: -50px;
       display: flex;
       justify-content: space-around;
-      padding-right: 2%;
+
     }
     .block-2 {
       margin-top: 50px;
       display: flex;
       justify-content: space-around;
-      margin-right: 2%;
       padding-bottom: 50px;
     }
 
@@ -65,7 +78,7 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 300px;
     img{
       cursor: pointer;
     }

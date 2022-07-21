@@ -117,14 +117,19 @@ export const Header: React.FC = () => {
                         <div className={'menu__header'}>Hello, {isAuth ? ' ' + name : 'Sign in'}</div>
                         <div className={'menu__shop'}>
                             <span>Shop by department</span>
-                            <a>Video Game Consoles</a>
-                            <a>Computers & Accessories</a>
-                            <a>Headphones</a>
-                            <a>Cell Phones & Accessories</a>
-                            <a>Television & Video</a>
-                            <a>Computer Components</a>
+                            <Link to={'/catalog'} onClick={() => onClickHandler('accessories')}>Computers & Accessories</Link>
+                            <Link to={'/catalog'} onClick={() => onClickHandler('televisions')}>Television & Video</Link>
                             <Link to={'/catalog'} onClick={() => onClickHandler('laptop')}>Computers & Tablets</Link>
                             <Link to={'/catalog'} onClick={() => onClickHandler('monitor')}>Monitors</Link>
+                        </div>
+                        <div className={'menu__line'}/>
+                        <div className={'menu__help'}>
+                            <span>Programs & Features</span>
+                            <a>Gift Cards</a>
+                            <a>#FoundItOnAmazon</a>
+                            <a>Amazon Live</a>
+                            <a>International Shopping</a>
+                            <a>See All</a>
                         </div>
                         <div className={'menu__line'}/>
                         <div className={'menu__help'}>

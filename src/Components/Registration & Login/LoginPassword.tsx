@@ -1,9 +1,9 @@
 import React, {useEffect, useRef} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {StateType, useAppDispatch} from "../../redux/redux-store";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
-import {getRegData, setEmail, setIsAuth} from "../../redux/Login-Slice";
+import {setIsAuth} from "../../redux/Login-Slice";
 
 
 type formType = {
@@ -30,6 +30,7 @@ export const LoginPassword: React.FC = () => {
             localStorage.setItem('email', JSON.stringify(email))
             navigate('/')
             isCorrect.current = true
+
         } else {
             isCorrect.current = false
             console.log('false')

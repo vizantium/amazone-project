@@ -1,7 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {StateType} from "../../redux/redux-store";
-import {Item} from "../Catalog/Item";
 import {SearchItem} from "./SearchItem";
 
 type catalogItemsProps = {

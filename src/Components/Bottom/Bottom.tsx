@@ -1,9 +1,16 @@
 import React from "react";
 
 export const Bottom: React.FC = () => {
+    const scrollUp = () => {
+        window.scrollTo(0, -200)
+    }
+
     return (
-        <div>
+        <div className={'bottom'}>
             <div className={'up__bottom'}>
+                <div className={'scroll__up'} onClick={scrollUp}>
+                    Back to top
+                </div>
                 <div className={'up__bottom__block'}>
                     <div className={'up__bottom__smallBlock'}>
                         <span>Get to Know Us</span>

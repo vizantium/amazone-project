@@ -7,7 +7,6 @@ type carouselType = {
 
 export const Carousel: React.FC<carouselType> = ({children}) => {
     const [offset, setOffset] = useState(0)
-    const [pages, setPages] = useState([])
 
     const handleLeftArrow = () => {
         if (offset)

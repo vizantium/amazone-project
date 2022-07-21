@@ -1,7 +1,19 @@
+.search__result {
+  position: absolute;
+  color: #f3f3f3;
+  top: 60px;
+  background-color: white;
+  display: block;
+  z-index: 2;
 
+  .text__res {
+
+  }
+
+}
 .search {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
   height: 42px;
   display: flex;
   flex-grow: 1;

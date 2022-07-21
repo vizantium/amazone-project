@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {StateType} from "../../redux/redux-store";
 import {CartEmpty} from "./CartEmpty";
 import {CartItem} from "./CartItem";
-import {PriceDiv} from "../../utils/priceDiv";
 import {removeAll} from "../../redux/cart-slice";
 
 

@@ -7,7 +7,6 @@ import {StateType, useAppDispatch} from "../../redux/redux-store";
 import {addItem} from "../../redux/cart-slice";
 import {useSelector} from "react-redux";
 import {PriceDiv} from "../../utils/priceDiv";
-import {useForm} from "react-hook-form";
 
 
 type infoType = {
@@ -24,14 +23,19 @@ export const FullItem: React.FC = () => {
     const count = cartItem ? cartItem.count : 0
     const {isAuth} = useSelector((state:StateType) => state.LoginSlice)
     const navigate = useNavigate()
+    const isMounted = useRef(false)
     console.log(count)
 
     const onClickAdd = () => {
-        const options = refDiv.current?.outerText
-        console.log(options)
-        const itemAdd = { item, count, options}
+        if (!isAuth) {
+            navigate('/login')
+        } else {
+            const options = refDiv.current?.outerText
+            console.log(options)
+            const itemAdd = {item, count, options}
 
-        dispatch(addItem(itemAdd))
+            dispatch(addItem(itemAdd))
+        }
     }
 
     useEffect(() => {
@@ -61,11 +65,6 @@ export const FullItem: React.FC = () => {
 
     }, [])
 
-    useEffect(() => {
-        if (!isAuth) {
-            navigate('/login')
-        }
-    }, [])
 
     const getRandomIntInclusive = (min: number, max: number) => {
         min = Math.ceil(min);
