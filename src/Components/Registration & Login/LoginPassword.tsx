@@ -10,7 +10,7 @@ type formType = {
     password: string
 }
 
-export const LoginPassword: React.FC = () => {
+const LoginPassword: React.FC = () => {
     const {email} = useSelector((state: StateType) => state.LoginSlice)
     const {register,watch , formState: {errors}, handleSubmit} = useForm<formType>({
         mode: "onSubmit"
@@ -76,3 +76,5 @@ export const LoginPassword: React.FC = () => {
         </div>
     )
 }
+
+export default LoginPassword

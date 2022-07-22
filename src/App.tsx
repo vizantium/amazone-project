@@ -3,14 +3,14 @@ import './scss/app.scss';
 import {Content} from "./Components/Content/Content";
 import {Route, Routes} from "react-router-dom";
 import {Registration} from "./Components/Registration & Login/Registration";
-import {Login} from "./Components/Registration & Login/Login";
 import {MainLayout} from "./Components/Content/MainPage";
-import {LoginPassword} from "./Components/Registration & Login/LoginPassword";
-import {Catalog} from "./Components/Catalog/Catalog";
-import {FullItem} from "./Components/FullItem/FullItem";
-import {Cart} from "./Components/Cart/Cart";
-import {SearchPage} from "./Components/SearchPage/SearchPage";
 
+const Cart = React.lazy(() => import('./Components/Cart/Cart'))
+const SearchPage = React.lazy(() => import('./Components/SearchPage/SearchPage'))
+const FullItem = React.lazy(() => import('./Components/FullItem/FullItem'))
+const Catalog = React.lazy(() => import('./Components/Catalog/Catalog'))
+const Login = React.lazy(() => import('./Components/Registration & Login/Login'))
+const LoginPassword = React.lazy(() => import('./Components/Registration & Login/LoginPassword'))
 
 function App() {
     return (

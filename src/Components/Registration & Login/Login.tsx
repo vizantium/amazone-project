@@ -9,7 +9,7 @@ type formType = {
    email: string
 }
 
-export const Login: React.FC = () => {
+const Login: React.FC = () => {
     const navigate = useNavigate()
     const {register,watch , formState: {errors}, handleSubmit} = useForm<formType>({
         mode: 'onBlur'
@@ -77,3 +77,5 @@ export const Login: React.FC = () => {
         </div>
     )
 }
+
+export default Login

@@ -12,7 +12,7 @@ type PopupClick = MouseEvent & {
     path: Node[]
 }
 
-export const Catalog: React.FC = () => {
+const Catalog: React.FC = () => {
     const {items} = useSelector((state:StateType) => state.catalogSlice)
     const navigate = useNavigate()
     const {category, searchValue, sort, order} = useSelector((state:StateType) => state.filterSlice)
@@ -103,3 +103,5 @@ export const Catalog: React.FC = () => {
         </div>
     )
 }
+
+export default Catalog

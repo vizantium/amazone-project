@@ -14,7 +14,7 @@ type infoType = {
     style?: Array<string>
 }
 
-export const FullItem: React.FC = () => {
+const FullItem: React.FC = () => {
     const [item, setItem] = useState<typeItem>()
     const [activeType, setActiveType] = useState(0)
     const cartItem = useSelector((state: StateType) => state.cartSlice.items.find(obj => obj.item.info.id === item?.info.id))
@@ -199,3 +199,4 @@ export const FullItem: React.FC = () => {
     )
 }
 
+export default FullItem

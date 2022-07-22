@@ -6,7 +6,7 @@ import {CartItem} from "./CartItem";
 import {removeAll} from "../../redux/cart-slice";
 
 
-export const Cart: React.FC = () => {
+const Cart: React.FC = () => {
     const {totalCount, items, totalPrice} = useSelector((state: StateType) => state.cartSlice)
     const dispatch = useDispatch()
     const onClickRemoveAll = () => {
@@ -46,3 +46,5 @@ export const Cart: React.FC = () => {
         </div>
     )
 }
+
+export default Cart

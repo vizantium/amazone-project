@@ -9,7 +9,7 @@ import {getItemBySearch} from "../../redux/search-slice";
 import {SearchSort} from "./SearchSort";
 
 
-export const SearchPage:React.FC = () => {
+const SearchPage:React.FC = () => {
     const {items} = useSelector((state:StateType) => state.searchSlice)
     const navigate = useNavigate()
     const {searchValue} = useSelector((state:StateType) => state.filterSlice)
@@ -64,3 +64,5 @@ export const SearchPage:React.FC = () => {
         </div>
     )
 }
+
+export default SearchPage
