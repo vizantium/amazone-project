@@ -40,9 +40,21 @@ function App() {
                     }/>
 
                 </Route>
-                <Route path={'registration'} element={<Registration/>}/>
-                <Route path={'login'} element={<Login/>}/>
-                <Route path={'login/password'} element={<LoginPassword/>}/>
+                <Route path={'registration'} element={
+                    <React.Suspense fallback={<div>Download...</div>}>
+                        <Registration/>
+                    </React.Suspense>
+                }/>
+                <Route path={'login'} element={
+                    <React.Suspense fallback={<div>Download...</div>}>
+                    <Login/>
+                </React.Suspense>}
+                />
+                <Route path={'login/password'} element={
+                    <React.Suspense fallback={<div>Download...</div>}>
+                        <LoginPassword/>
+                    </React.Suspense>
+                }/>
             </Routes>
         </div>
     );

@@ -7,9 +7,6 @@ export const getCartFromLocalStorage = () => {
     const items = data ? JSON.parse(data) : [];
     const totalPrice = calcTotalPrice(items);
     const totalCount = calcTotalCount(items)
-    console.log(data)
-    console.log(totalPrice)
-    console.log(totalCount)
 
     return {
         items: items as cartItem[],

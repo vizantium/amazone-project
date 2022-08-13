@@ -5,14 +5,13 @@ import {useDispatch} from "react-redux";
 
 export const CartItem:React.FC<cartItem> = ({item, count, options}) => {
     const dispatch = useDispatch()
-    const ItemPrice = Number(item.price) * count
-    const id = item.info.id
-    const price = item.price
+    const ItemPrice = Number(item?.price) * count
+    const id = item?.info.id
+    const price = item?.price
 
     const onClickMinus = () => {
         dispatch(minusItem({id, price}))
     }
-    debugger
     const onClickPlus = () => {
         dispatch(addItemPlus(id))
     }
